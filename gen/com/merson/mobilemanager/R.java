@@ -1068,8 +1068,18 @@ containing a value of this type.
         public static final int abc_textfield_searchview_holo_light=0x7f020054;
         public static final int abc_textfield_searchview_right_holo_dark=0x7f020055;
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
-        public static final int ic_launcher=0x7f020057;
-        public static final int logo2=0x7f020058;
+        public static final int app=0x7f020057;
+        public static final int atools=0x7f020058;
+        public static final int callmsgsafe=0x7f020059;
+        public static final int ic_launcher=0x7f02005a;
+        public static final int logo2=0x7f02005b;
+        public static final int main=0x7f02005c;
+        public static final int netmanager=0x7f02005d;
+        public static final int safe=0x7f02005e;
+        public static final int settings=0x7f02005f;
+        public static final int sysoptimize=0x7f020060;
+        public static final int taskmanager=0x7f020061;
+        public static final int trojan=0x7f020062;
     }
     public static final class id {
         public static final int action_bar=0x7f05001c;
@@ -1096,18 +1106,20 @@ containing a value of this type.
         public static final int end=0x7f050013;
         public static final int expand_activities_button=0x7f050026;
         public static final int expanded_menu=0x7f05002c;
+        public static final int gv_home_content=0x7f05003d;
         public static final int home=0x7f050014;
         public static final int homeAsUp=0x7f050005;
         public static final int icon=0x7f05002a;
         public static final int ifRoom=0x7f05000a;
         public static final int image=0x7f050027;
+        public static final int iv_gv_icon=0x7f050040;
         public static final int listMode=0x7f050001;
         public static final int list_item=0x7f050029;
         public static final int middle=0x7f050012;
         public static final int never=0x7f050009;
         public static final int none=0x7f050010;
         public static final int normal=0x7f050000;
-        public static final int pb_splash_down=0x7f05003d;
+        public static final int pb_splash_down=0x7f05003f;
         public static final int progress_circular=0x7f050018;
         public static final int progress_horizontal=0x7f050019;
         public static final int radio=0x7f05002f;
@@ -1130,7 +1142,9 @@ containing a value of this type.
         public static final int tabMode=0x7f050002;
         public static final int title=0x7f05002b;
         public static final int top_action_bar=0x7f050020;
-        public static final int tv_splash_version=0x7f05003c;
+        public static final int tv_gv_name=0x7f050041;
+        public static final int tv_home_welcome=0x7f05003c;
+        public static final int tv_splash_version=0x7f05003e;
         public static final int up=0x7f050021;
         public static final int useLogo=0x7f050003;
         public static final int withText=0x7f05000c;
@@ -1187,7 +1201,8 @@ containing a value of this type.
         public static final int abc_simple_decor=0x7f030017;
         public static final int activity_home=0x7f030018;
         public static final int activity_splash=0x7f030019;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001a;
+        public static final int item_gridview=0x7f03001a;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001b;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
