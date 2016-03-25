@@ -8,6 +8,20 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:id="@+id/tv_splash_version"
+        android:layout_centerInParent="true"
+        android:text="version 1.0"
+        android:paddingTop="100dp"
+        />
+    
+    
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:id="@+id/pb_splash_down"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tv_splash_version"
+        android:visibility="gone"/>
 
 </RelativeLayout>
