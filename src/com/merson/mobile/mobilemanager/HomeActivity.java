@@ -1,9 +1,10 @@
 package com.merson.mobile.mobilemanager;
 
-import com.merson.mobilemanager.R;
-
+import com.merson.mobilemanager.R; 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,7 +16,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class HomeActivity extends Activity {
+public class HomeActivity extends ActionBarActivity {
 
 	private TextView tv_home_welcome;
 	private GridView gv_home_content;
@@ -34,6 +35,10 @@ public class HomeActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
+		
+		//final ActionBar actionBar = getActionBar();
+		  final android.support.v7.app.ActionBar supportActionBar = getSupportActionBar();
+	      supportActionBar.hide();
 		
 		 tv_home_welcome = (TextView) findViewById(R.id.tv_home_welcome);
 		 gv_home_content = (GridView) findViewById(R.id.gv_home_content);
