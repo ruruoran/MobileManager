@@ -388,6 +388,14 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int itemPadding=0x7f010037;
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int itemtitle=0x7f01006e;
         /**  Drawable used as a background for selected list items. 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
@@ -470,6 +478,22 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 </table>
          */
         public static final int navigationMode=0x7f010027;
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int offstring=0x7f010070;
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int onstring=0x7f01006f;
         /**  Sets the padding, in pixels, of the end edge; see {@link android.R.attr#padding}. 
          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
@@ -656,6 +680,14 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 </table>
          */
         public static final int showDividers=0x7f010055;
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int sp_keyname=0x7f010071;
         /**  Default Spinner style. 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
@@ -1096,7 +1128,7 @@ containing a value of this type.
         public static final int activity_chooser_view_content=0x7f050025;
         public static final int always=0x7f05000b;
         public static final int beginning=0x7f050011;
-        public static final int cb_setting_update=0x7f050040;
+        public static final int cb_setting_update=0x7f050042;
         public static final int checkbox=0x7f05002d;
         public static final int collapseActionView=0x7f05000d;
         public static final int default_activity_button=0x7f050028;
@@ -1113,14 +1145,14 @@ containing a value of this type.
         public static final int icon=0x7f05002a;
         public static final int ifRoom=0x7f05000a;
         public static final int image=0x7f050027;
-        public static final int iv_gv_icon=0x7f050043;
+        public static final int iv_gv_icon=0x7f050045;
         public static final int listMode=0x7f050001;
         public static final int list_item=0x7f050029;
         public static final int middle=0x7f050012;
         public static final int never=0x7f050009;
         public static final int none=0x7f050010;
         public static final int normal=0x7f050000;
-        public static final int pb_splash_down=0x7f050042;
+        public static final int pb_splash_down=0x7f050044;
         public static final int progress_circular=0x7f050018;
         public static final int progress_horizontal=0x7f050019;
         public static final int radio=0x7f05002f;
@@ -1138,16 +1170,18 @@ containing a value of this type.
         public static final int showCustom=0x7f050007;
         public static final int showHome=0x7f050004;
         public static final int showTitle=0x7f050006;
+        public static final int si_setting_showlocation=0x7f05003f;
+        public static final int si_setting_update=0x7f05003e;
         public static final int split_action_bar=0x7f05001e;
         public static final int submit_area=0x7f050039;
         public static final int tabMode=0x7f050002;
         public static final int title=0x7f05002b;
         public static final int top_action_bar=0x7f050020;
-        public static final int tv_gv_name=0x7f050044;
+        public static final int tv_gv_name=0x7f050046;
         public static final int tv_home_welcome=0x7f05003c;
-        public static final int tv_setting_autoupdate=0x7f05003e;
-        public static final int tv_setting_updatestatus=0x7f05003f;
-        public static final int tv_splash_version=0x7f050041;
+        public static final int tv_setting_autoupdate=0x7f050040;
+        public static final int tv_setting_updatestatus=0x7f050041;
+        public static final int tv_splash_version=0x7f050043;
         public static final int up=0x7f050021;
         public static final int useLogo=0x7f050003;
         public static final int withText=0x7f05000c;
@@ -1204,9 +1238,10 @@ containing a value of this type.
         public static final int abc_simple_decor=0x7f030017;
         public static final int activity_home=0x7f030018;
         public static final int activity_setting=0x7f030019;
-        public static final int activity_splash=0x7f03001a;
-        public static final int item_gridview=0x7f03001b;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001c;
+        public static final int activity_setting_item=0x7f03001a;
+        public static final int activity_splash=0x7f03001b;
+        public static final int item_gridview=0x7f03001c;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001d;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
@@ -1252,6 +1287,7 @@ containing a value of this type.
         public static final int app_name=0x7f0a000d;
         public static final int hello_world=0x7f0a000e;
         public static final int title_activity_setting=0x7f0a0010;
+        public static final int title_activity_setting_item=0x7f0a0011;
         public static final int title_activity_splash=0x7f0a000f;
     }
     public static final class style {
@@ -2796,6 +2832,81 @@ containing a value of this type.
           @attr name com.merson.mobilemanager:queryHint
         */
         public static final int SearchView_queryHint = 4;
+        /** Attributes that can be used with a SettingItem.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #SettingItem_itemtitle com.merson.mobilemanager:itemtitle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SettingItem_offstring com.merson.mobilemanager:offstring}</code></td><td></td></tr>
+           <tr><td><code>{@link #SettingItem_onstring com.merson.mobilemanager:onstring}</code></td><td></td></tr>
+           <tr><td><code>{@link #SettingItem_sp_keyname com.merson.mobilemanager:sp_keyname}</code></td><td></td></tr>
+           </table>
+           @see #SettingItem_itemtitle
+           @see #SettingItem_offstring
+           @see #SettingItem_onstring
+           @see #SettingItem_sp_keyname
+         */
+        public static final int[] SettingItem = {
+            0x7f01006e, 0x7f01006f, 0x7f010070, 0x7f010071
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.merson.mobilemanager.R.attr#itemtitle}
+          attribute's value can be found in the {@link #SettingItem} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.merson.mobilemanager:itemtitle
+        */
+        public static final int SettingItem_itemtitle = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.merson.mobilemanager.R.attr#offstring}
+          attribute's value can be found in the {@link #SettingItem} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.merson.mobilemanager:offstring
+        */
+        public static final int SettingItem_offstring = 2;
+        /**
+          <p>This symbol is the offset where the {@link com.merson.mobilemanager.R.attr#onstring}
+          attribute's value can be found in the {@link #SettingItem} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.merson.mobilemanager:onstring
+        */
+        public static final int SettingItem_onstring = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.merson.mobilemanager.R.attr#sp_keyname}
+          attribute's value can be found in the {@link #SettingItem} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.merson.mobilemanager:sp_keyname
+        */
+        public static final int SettingItem_sp_keyname = 3;
         /** Attributes that can be used with a Spinner.
            <p>Includes the following attributes:</p>
            <table>
