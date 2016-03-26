@@ -260,7 +260,8 @@ public class SplashActivity extends Activity {
     
     //Ìø×ªÖ÷Ò³
     public void enterHome(){
-    	startActivity(new Intent(this,HomeActivity.class));
+    	Log.i("splash","enterHome");
+    	startActivity(new Intent(SplashActivity.this,HomeActivity.class));
     	finish();
     }
 
@@ -326,8 +327,11 @@ public class SplashActivity extends Activity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                     msg.what=MSG_ERROR_JSON;
+                }finally{
+                	myhandler.sendMessage(msg);
                 }
 
+                
 
             }
         }.start();
