@@ -3,6 +3,7 @@ package com.merson.mobile.mobilemanager;
 import com.merson.mobilemanager.R; 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -96,8 +97,10 @@ public class HomeActivity extends ActionBarActivity {
 				Toast.makeText(HomeActivity.this,titles[position],Toast.LENGTH_LONG).show();
 				break;
 				
-			case 8:
-				Toast.makeText(HomeActivity.this,titles[position],Toast.LENGTH_LONG).show();
+			case 8://设置中心
+				//Toast.makeText(HomeActivity.this,titles[position],Toast.LENGTH_LONG).show();
+				//点击  跳转到 settingactivity 页面
+				startActivity(new Intent(HomeActivity.this,SettingActivity.class));
 				break;
 
 			default:

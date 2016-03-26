@@ -55,6 +55,7 @@ public class SplashActivity extends Activity {
     private static final  int MSG_ERROR_URL =-2;
     private static final  int MSG_ERROR_IO =-3;
         private static final  int MSG_ERROR_JSON =-4;
+        private static final  int MSG_WATI_TIMEOUT =2;
     
 
     @Override
@@ -69,8 +70,14 @@ public class SplashActivity extends Activity {
         
         tv_splash_version.setText("current_version ： "+current_version);
         
-        getNewVersion();
-        
+//      优化：只有在用户开启 检测主动升级  才检测新版本
+        //getNewVersion();
+        if (MyApplication.configsp.getBoolean("autoupdate", true)) {
+        	getNewVersion();
+		}else{
+			//新增 waitaWhile函数  等待在splash页面停留几秒
+			waitaWhile();
+		}
      
 
 
@@ -78,7 +85,39 @@ public class SplashActivity extends Activity {
 
 
 
-    private String getVersionName(){
+    private void waitaWhile() {
+		// TODO Auto-generated method stub
+		new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				try {
+					Thread.sleep(5000);
+					
+					/*当需要修改页面时
+					 * runOnUiThread(new Runnable() {
+					 +                    @Override
+					 +                    public void run() {
+					 +                        enterHome();
+					 +
+					 +                    }
+					 +                });*/
+				
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				Message msg = myhandler.obtainMessage();
+				msg.what=MSG_WATI_TIMEOUT;
+				myhandler.sendMessage(msg);
+			}
+		}).start();
+	}
+
+
+
+	private String getVersionName(){
 
         String versionName ="";
 
@@ -148,6 +187,11 @@ public class SplashActivity extends Activity {
                 	Toast.makeText(SplashActivity.this, MSG_ERROR_IO+"",Toast.LENGTH_LONG).show();
                 	enterHome();
                 	break;
+                	
+                case MSG_WATI_TIMEOUT:
+                	enterHome();
+                	 
+                    break;
                 
                 	
                 
