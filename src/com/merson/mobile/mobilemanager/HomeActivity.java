@@ -1,17 +1,22 @@
 package com.merson.mobile.mobilemanager;
 
+import com.merson.mobile.application.MyApplication;
+import com.merson.mobilemanager.PhoneSafeActivity;
 import com.merson.mobilemanager.R; 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -65,8 +70,20 @@ public class HomeActivity extends ActionBarActivity {
 				long id) {
 			// TODO Auto-generated method stub
 			switch (position) {
-			case 0:
-				Toast.makeText(HomeActivity.this,titles[position],Toast.LENGTH_LONG).show();
+			case 0://手机防盗
+				//Toast.makeText(HomeActivity.this,titles[position],Toast.LENGTH_LONG).show();
+				 //设置一个密码，输入密码正确之后才可以进入设置
+				 //第一次进入的时候让他设置密码，保存到sp里。之后第二次以后才验证密码
+				String phonesafe_pwd = MyApplication.configsp.getString("phonesafe_pwd", "");
+				if (phonesafe_pwd.isEmpty()) {
+					 //表明没有设置过，此时弹出一个框让用户去设置
+					showSetpwdDialog();
+				}else {
+					 //看看用户输入的密码跟之前保存的是否一样
+                    showinputpwdDialog();
+				}
+				
+				// startActivity(new Intent(HomeActivity.this,PhoneSafeActivity.class));
 				break;
 				
 			case 1:
@@ -100,7 +117,7 @@ public class HomeActivity extends ActionBarActivity {
 			case 8://设置中心
 				//Toast.makeText(HomeActivity.this,titles[position],Toast.LENGTH_LONG).show();
 				//点击  跳转到 settingactivity 页面
-				startActivity(new Intent(HomeActivity.this,SettingActivity.class));
+				//startActivity(new Intent(this,SettingActivity.class));
 				break;
 
 			default:
@@ -108,7 +125,109 @@ public class HomeActivity extends ActionBarActivity {
 			}
 			
 		}
+
 		
+	}
+	
+	
+	//自定义alertdialog    用于验证密码
+	private void showinputpwdDialog(){
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		View v= View.inflate(this,R.layout.inpwd_dialog,null);
+        final TextView et_condialog_pwd= (TextView) v.findViewById(R.id.et_condialog_pwd);
+
+        Button  bt_conpwddialog_cancle = (Button) v.findViewById(R.id.bt_conpwddialog_cancle);
+        Button  bt_conpwddialog_confirm = (Button) v.findViewById(R.id.bt_conpwddialog_confirm);
+
+        builder.setView(v);
+        final AlertDialog dialog = builder.create();
+        dialog.show();
+        
+        bt_conpwddialog_confirm.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				String pwd = et_condialog_pwd.getText().toString();
+				String savepwd = MyApplication.configsp.getString("phonesafe_pwd", "");
+				
+				//savepwd 还是可能为空的。时间差
+				if (!savepwd.isEmpty()) {
+					if (savepwd.equals(pwd)) {
+						dialog.dismiss();
+						startActivity(new Intent(HomeActivity.this,PhoneSafeActivity.class));
+					}else {
+						Toast.makeText(HomeActivity.this, "输入密码有误，请重输！", Toast.LENGTH_LONG).show();
+					}
+				}
+			}
+		});
+        
+        bt_conpwddialog_cancle.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				dialog.dismiss();
+			}
+		});
+        
+	}
+	
+	
+	
+	//自定义alertdialog    用于设置密码
+	private void showSetpwdDialog() {
+		// TODO Auto-generated method stub
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		
+		View v = View.inflate(this,R.layout.setpwd_dialog,null);
+		 final TextView et_dialog_pwd= (TextView) v.findViewById(R.id.et_dialog_pwd);
+	        final TextView et_dialog_pwdcon= (TextView) v.findViewById(R.id.et_dialog_pwdcon);
+
+	        Button  bt_setpwddialog_confirm = (Button) v.findViewById(R.id.bt_setpwddialog_confirm);
+	        Button  bt_setpwddialog_cancle = (Button) v.findViewById(R.id.bt_setpwddialog_cancle);		
+	        
+	        builder.setView(v);
+	        final AlertDialog dialog = builder.create();
+	        dialog.show();
+	        
+	        bt_setpwddialog_confirm.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					String pwd = et_dialog_pwd.getText().toString();
+					String pwdcon = et_dialog_pwdcon.getText().toString();
+					
+					if (!pwd.isEmpty()&&!pwdcon.isEmpty()) {
+						//进一步判断
+						if (pwd.equals(pwdcon)) {
+							/*MyApplication.editor.putString("phonesafe_pwd",pwd);
+	                         MyApplication.editor.commit();*/
+							
+							MyApplication.setConfigValue("phonesafe_pwd", pwd);
+							dialog.dismiss();
+							
+						}else {
+							Toast.makeText(HomeActivity.this, "用户名或者密码不一致，请重新输入!", Toast.LENGTH_LONG).show();
+						}
+					}else {
+						Toast.makeText(HomeActivity.this, "用户名或者密码不能为空!", Toast.LENGTH_LONG).show();
+					}
+					
+				}
+			});
+	        
+	        bt_setpwddialog_cancle.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View arg0) {
+					// TODO Auto-generated method stub
+					dialog.dismiss();
+				}
+			});
+	        
 	}
 	
 	
