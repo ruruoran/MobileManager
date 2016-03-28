@@ -1,7 +1,7 @@
 package com.merson.mobile.mobilemanager;
 
-import com.merson.mobile.application.MyApplication;
-import com.merson.mobilemanager.PhoneSafeActivity;
+import com.merson.mobile.application.MyApplication; 
+import com.merson.mobile.utils.Md5Utils;
 import com.merson.mobilemanager.R; 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -159,6 +159,9 @@ public class HomeActivity extends ActionBarActivity {
 					}else {
 						Toast.makeText(HomeActivity.this, "输入密码有误，请重输！", Toast.LENGTH_LONG).show();
 					}
+				}else {
+					Toast.makeText(HomeActivity.this, "密码不能为空，请重输！", Toast.LENGTH_LONG).show();
+
 				}
 			}
 		});
@@ -206,7 +209,8 @@ public class HomeActivity extends ActionBarActivity {
 							/*MyApplication.editor.putString("phonesafe_pwd",pwd);
 	                         MyApplication.editor.commit();*/
 							
-							MyApplication.setConfigValue("phonesafe_pwd", pwd);
+							//将pwd换成 md5加密后的pwd
+							MyApplication.setConfigValue("phonesafe_pwd", Md5Utils.getMd5Digest(pwd));
 							dialog.dismiss();
 							
 						}else {
