@@ -1,5 +1,5 @@
 package com.merson.mobilemanager;
-
+//设置页面3  可以绑定手机号
 import com.merson.mobile.application.MyApplication;
 
 import android.app.Activity;
@@ -27,12 +27,20 @@ public class Setup3Activity extends Activity {
 	}
 	
 	//获取联系人
-	public void selectcontact(View v){
-		//方法1 跳转系统选择联系人的页面去选择
+/*	//方法1 跳转系统选择联系人的页面去选择
+ * public void selectcontact(View v){		
+		
 		Intent pickContactIntent = new Intent(Intent.ACTION_PICK,Uri.parse("content://contacts"));
 		pickContactIntent.setType(ContactsContract.CommonDataKinds.Phone.CONTENT_TYPE);
 //		startActivity(pickContactIntent);
 		startActivityForResult(pickContactIntent, 100);
+			
+	}*/
+	
+	
+	//第二种方法      自定义listview  装载 系统联系人
+	public void selectcontact(View v){
+		startActivity(new Intent(this,ContactListActivity.class));
 	}
 	
 	
@@ -60,6 +68,11 @@ public class Setup3Activity extends Activity {
 				et_setup3_safenum.setText(number);
 				
 			}
+		}else if (resultCode==1000) {
+			if (requestCode==200) {
+				String number = data.getStringExtra("number");
+				et_setup3_safenum.setText(number);
+			}
 		}
 	}
 	
@@ -74,7 +87,7 @@ public class Setup3Activity extends Activity {
 		final String s = et_setup3_safenum.getText().toString();
 		if (!s.isEmpty()) {//安全号码不为空时  即设置了安全号码
 			MyApplication.setConfigValue("safenum", s);
-//			startActivity(new Intent(this,Setup4Activity.class));
+			startActivity(new Intent(this,Setup4Activity.class));
 		}else{//还未设置安全号码
 			Toast.makeText(Setup3Activity.this, "安全号码不能为空！！！", Toast.LENGTH_LONG).show();
 		}

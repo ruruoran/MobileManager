@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 public class Setup2Activity extends ActionBarActivity {
 
@@ -53,6 +54,13 @@ public class Setup2Activity extends ActionBarActivity {
 	
 	//下一页  即第三页
 	public void next(View v){
-		startActivity(new Intent(this,Setup3Activity.class));
+		String imsi = MyApplication.configsp.getString("imsi", "");
+		if (!imsi.isEmpty()) {//imsi不为空   即已经绑定手机号
+			
+			startActivity(new Intent(this,Setup3Activity.class));
+
+		}else {
+			Toast.makeText(this, "对不起，没有绑定手机，无法使用本功能！", Toast.LENGTH_LONG).show();
+		}
 	}
 }
