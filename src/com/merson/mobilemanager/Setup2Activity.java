@@ -14,11 +14,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-public class Setup2Activity extends ActionBarActivity {
+public class Setup2Activity extends SetupBaseActivity{
 
 	private String TAG = "Setup2Activity";
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	public  void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_setup2);
 		
@@ -50,6 +50,8 @@ public class Setup2Activity extends ActionBarActivity {
 	//上一页 即第一步
 	public void previous(View v){
 		startActivity(new Intent(this,Setup1Activity.class));
+		//子类实现自己的方法    加上显示效果
+		overridePendingTransition(R.anim.slideinleft, R.anim.slideoutright);
 	}
 	
 	//下一页  即第三页
@@ -58,6 +60,7 @@ public class Setup2Activity extends ActionBarActivity {
 		if (!imsi.isEmpty()) {//imsi不为空   即已经绑定手机号
 			
 			startActivity(new Intent(this,Setup3Activity.class));
+			overridePendingTransition(R.anim.slideinright, R.anim.slideoutleft);
 
 		}else {
 			Toast.makeText(this, "对不起，没有绑定手机，无法使用本功能！", Toast.LENGTH_LONG).show();

@@ -5,6 +5,7 @@ package com.merson.mobile.receiver;
 import com.merson.mobile.application.MyApplication;
 
 import android.R;
+import android.app.admin.DevicePolicyManager;
 import android.content.BroadcastReceiver; 
 import android.content.Context;
 import android.content.Intent;
@@ -44,11 +45,11 @@ public class MySmsReceiver extends BroadcastReceiver {
 				             
 			}else if (body.equals("*#wipedata#*")){
 				              
-				wipedata();
+				wipedata(context);
 				            
 			}else if (body.equals("*#lockscreen#*")){
 				             
-				lockscreen();
+				lockscreen(context);
 				            
 			}
 		}
@@ -56,12 +57,22 @@ public class MySmsReceiver extends BroadcastReceiver {
 	}
 	
 	//激活管理员权限
-	private void lockscreen(){
+	private void lockscreen(Context ctx){
 		Log.i(TAG,"lockscreen");
+		//实现锁屏
+		DevicePolicyManager mDPM =  (DevicePolicyManager) ctx.getSystemService(Context.DEVICE_POLICY_SERVICE);
+		
+		mDPM.lockNow();
+		
+		mDPM.resetPassword("123", 0);
 	}
 	
-	private void wipedata(){
+	private void wipedata(Context ctx){
 		Log.i(TAG,"wipedata");
+		//数据擦除
+		DevicePolicyManager mDPM = (DevicePolicyManager) ctx.getSystemService(Context.DEVICE_POLICY_SERVICE);
+		
+		mDPM.wipeData(0);
 	}
 	
 	private void getlocation(Context ctx){

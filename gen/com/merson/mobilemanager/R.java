@@ -15,6 +15,10 @@ public final class R {
         public static final int abc_slide_in_top=0x7f040003;
         public static final int abc_slide_out_bottom=0x7f040004;
         public static final int abc_slide_out_top=0x7f040005;
+        public static final int slideinleft=0x7f040006;
+        public static final int slideinright=0x7f040007;
+        public static final int slideoutleft=0x7f040008;
+        public static final int slideoutright=0x7f040009;
     }
     public static final class attr {
         /**  Custom divider drawable to use for elements in the action bar. 
@@ -1270,12 +1274,14 @@ containing a value of this type.
         public static final int activity_setup2=0x7f03001e;
         public static final int activity_setup3=0x7f03001f;
         public static final int activity_setup4=0x7f030020;
-        public static final int activity_splash=0x7f030021;
-        public static final int inpwd_dialog=0x7f030022;
-        public static final int item_contactlist=0x7f030023;
-        public static final int item_gridview=0x7f030024;
-        public static final int setpwd_dialog=0x7f030025;
-        public static final int support_simple_spinner_dropdown_item=0x7f030026;
+        public static final int activity_setup_base=0x7f030021;
+        public static final int activity_splash=0x7f030022;
+        public static final int device_admin_sample=0x7f030023;
+        public static final int inpwd_dialog=0x7f030024;
+        public static final int item_contactlist=0x7f030025;
+        public static final int item_gridview=0x7f030026;
+        public static final int setpwd_dialog=0x7f030027;
+        public static final int support_simple_spinner_dropdown_item=0x7f030028;
     }
     public static final class raw {
         public static final int alarm=0x7f050000;
@@ -1323,6 +1329,8 @@ containing a value of this type.
         public static final int abc_shareactionprovider_share_with_application=0x7f0b000b;
         public static final int app_name=0x7f0b000d;
         public static final int hello_world=0x7f0b000e;
+        public static final int sample_device_admin=0x7f0b0019;
+        public static final int sample_device_admin_description=0x7f0b001a;
         public static final int title_activity_contact_list=0x7f0b0017;
         public static final int title_activity_phone_safe=0x7f0b0012;
         public static final int title_activity_setting=0x7f0b0010;
@@ -1331,6 +1339,7 @@ containing a value of this type.
         public static final int title_activity_setup2=0x7f0b0014;
         public static final int title_activity_setup3=0x7f0b0015;
         public static final int title_activity_setup4=0x7f0b0016;
+        public static final int title_activity_setup_base=0x7f0b0018;
         public static final int title_activity_splash=0x7f0b000f;
     }
     public static final class style {

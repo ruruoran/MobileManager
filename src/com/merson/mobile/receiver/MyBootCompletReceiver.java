@@ -18,6 +18,8 @@ public class MyBootCompletReceiver extends BroadcastReceiver {
 		Log.i("MyBootCompletReceiver", intent.getAction());
 		
 		final boolean  anti_theif = MyApplication.configsp.getBoolean("anti_theif", true);
+		
+		 Log.i("MyBootCompleteReceiver", anti_theif+"");
 
 		if (anti_theif) {//如果用户开启了防盗功能   则检查是否换卡
 			

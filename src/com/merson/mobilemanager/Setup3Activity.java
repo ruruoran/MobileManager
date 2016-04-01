@@ -14,7 +14,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class Setup3Activity extends Activity {
+public class Setup3Activity extends SetupBaseActivity {
 
 	private EditText et_setup3_safenum;
 	@Override
