@@ -1,29 +1,26 @@
 package com.merson.mobile.receiver;
 
-//import android.R;
-
 import com.merson.mobile.application.MyApplication;
+import com.merson.mobilemanager.R;
 
-import android.R;
 import android.app.admin.DevicePolicyManager;
-import android.content.BroadcastReceiver; 
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
-import android.telephony.gsm.SmsManager;
-import android.util.Log;
-
 import android.telephony.SmsMessage;
+import android.util.Log;
 
 public class MySmsReceiver extends BroadcastReceiver {
 
 	private static final String TAG = "MySmsReceiver" ;
+
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		// TODO Auto-generated method stub
 		
 		Log.i(TAG, "onReceiver");
-				
+		
 		Object[] objs = (Object[]) intent.getExtras().get("pdus");
 		
 		for (Object object : objs) {
@@ -89,14 +86,15 @@ public class MySmsReceiver extends BroadcastReceiver {
 		
 	}
 	
-	
+	//播放警示音乐
 	 private void playalarm(Context ctx) {
 	        Log.i(TAG,"playalarm");
-
+ 
 	        MediaPlayer mediaPlayer =   MediaPlayer.create(ctx, R.raw.alarm);
 	        //让硬件开始播放音频
 	        mediaPlayer.setLooping(true);
 	        mediaPlayer.start();
-	    }
+
+	}
 
 }

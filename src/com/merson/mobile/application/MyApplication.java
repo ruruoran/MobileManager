@@ -3,7 +3,10 @@ package com.merson.mobile.application;
 /*application 里可存放全局的  
 1次增加*/
 
-import android.app.Application;
+import com.merson.mobile.receiver.MyNumberLocationService;
+
+import android.app.Application; 
+import android.content.Intent;
 import android.content.SharedPreferences;
 
 public class MyApplication extends Application {
@@ -25,11 +28,20 @@ public class MyApplication extends Application {
 		 
 		 editor = configsp.edit();
 		 
+		 startService(new Intent(this, MyNumberLocationService.class));
+		 
 	}
 	
 	public static void setConfigValue(String key , String value){
 		editor.putString(key, value);
 		editor.commit();
+	}
+	
+	@Override
+	public void onTerminate() {
+		// TODO Auto-generated method stub
+		super.onTerminate();
+		stopService(new Intent(this, MyNumberLocationService.class));
 	}
 
 }

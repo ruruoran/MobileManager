@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.content.res.AssetManager;
 import android.net.Uri;
 import android.os.Environment;
 import android.os.Handler;
@@ -41,6 +42,8 @@ import java.net.URI;
 import java.net.URL;
 import java.util.logging.LogRecord;
 
+import junit.framework.Assert;
+
 public class SplashActivity extends Activity {
 
     private static final String TAG = "SplashActivity";
@@ -74,18 +77,59 @@ public class SplashActivity extends Activity {
         //getNewVersion();
         if (MyApplication.configsp.getBoolean("autoupdate", true)) {
         	getNewVersion();
-		}else{
+		}else
 			//新增 waitaWhile函数  等待在splash页面停留几秒
 			waitaWhile();
-		}
+			
+			copydb();
+		
      
-
-
     }
 
 
+    //将数据库从assets目录下 copy到 data/data/packagename/
+    private void copydb() {
+		// TODO Auto-generated method stub    	
+    	try {
+    		
+                File db = new File("data/data/"+getPackageName()+"/location.db");
+        	
+        	    if (db.exists()) 
+    			    return;//db 存在  直接返回   无需再复制
+    			
+    			final AssetManager assetManager = getAssets();
+    			
+    			final InputStream open = assetManager.open("naddress.db");
+    			
+    			FileOutputStream fos = new FileOutputStream(db);
+    			
+    			byte[] bys = new byte[1024];
+    			int len = -1;
+    			
+    			while ((len=open.read(bys,0,1024))!=-1) {
+    				fos.write(bys,0,len);
+    			}
+    			
+    			fos.close();
+    			open.close();
+    			
+			
+		} catch (FileNotFoundException e) {
+			// TODO: handle exception
+			 e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+    }
+			
+	
 
-    private void waitaWhile() {
+
+
+
+	private void waitaWhile() {
 		// TODO Auto-generated method stub
 		new Thread(new Runnable() {
 			

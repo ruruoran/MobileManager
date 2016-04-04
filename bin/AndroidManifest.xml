@@ -51,7 +51,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+        </activity>
         -->
 
         <activity
@@ -89,6 +89,50 @@
         <activity
             android:name=".SetupBaseActivity"
             android:label="@string/title_activity_setup_base" >
+        </activity>
+
+        <receiver android:name="com.cskaoyan.mobile.receiver.MyBootCompleteReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.cskaoyan.mobile.receiver.MySmsReceiver" >
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.cskaoyan.mobile.service.MyUpdateLocationService" />
+
+        <!-- For Device Admin -->
+
+        <receiver
+            android:name="com.cskaoyan.mobile.receiver.MyDeviceAdminReceiver"
+            android:description="@string/sample_device_admin_description"
+            android:label="@string/sample_device_admin"
+            android:permission="android.permission.BIND_DEVICE_ADMIN" >
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/device_admin_sample" />
+
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.cskaoyan.mobile.service.MyNumberLocationService"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
+
+        <activity
+            android:name=".AdvanceToolActivity"
+            android:label="@string/title_activity_advance_tool" >
+        </activity>
+        <activity
+            android:name=".QueryLocationActivity"
+            android:label="@string/title_activity_query_location" >
         </activity>
     </application>
 
