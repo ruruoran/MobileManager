@@ -2,8 +2,10 @@ package com.merson.mobile.mobilemanager;
 
 import com.merson.mobile.application.MyApplication; 
 import com.merson.mobilemanager.R;
+import com.merson.mobilemanager.SetToastLocationActivity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -55,6 +57,11 @@ public class SettingActivity extends ActionBarActivity {
 		}
 		 
 		 
+		  final android.support.v7.app.ActionBar supportActionBar = getSupportActionBar();
+          supportActionBar.hide();		        
+          supportActionBar.hide();
+         
+		 
 		 //ÉèÖÃ checkbox¼àÌýÊÂ¼þ
 		 
 		 cb_setting_update.setOnClickListener(new View.OnClickListener() {
@@ -82,4 +89,11 @@ public class SettingActivity extends ActionBarActivity {
 			}
 		});*/
 	}
+	
+	
+	public void settoastlocation(View v){
+		startActivity(new Intent(this,SetToastLocationActivity.class));
+	}
+	
+	
 }

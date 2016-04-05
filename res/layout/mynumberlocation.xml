@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff"
+    android:background="@drawable/call_locate_green"
     android:orientation="vertical" >
     
     <TextView
@@ -11,9 +11,9 @@
         android:id="@+id/message"
         android:layout_weight="1"
         android:layout_gravity="center_horizontal"
-        android:textColor="#F00"
-        android:shadowColor="#BB000000"
+        android:textColor="#000"
+        android:shadowColor="#fff"
         android:shadowRadius="2.75"
-        />
+       ></TextView>
 
 </LinearLayout>

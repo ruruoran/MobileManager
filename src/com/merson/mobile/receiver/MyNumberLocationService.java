@@ -11,6 +11,7 @@ import android.os.IBinder;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
@@ -89,6 +90,7 @@ public class MyNumberLocationService extends Service {
 		
 		LayoutInflater inflate = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		v = inflate.inflate(R.layout.mynumberlocation,null);
+		 v.setBackgroundResource(R.drawable.call_locate_blue);
 		
 		TextView message = (TextView) v.findViewById(R.id.message);
 		message.setText(location);
@@ -101,6 +103,11 @@ public class MyNumberLocationService extends Service {
 		layoutParams.width = WindowManager.LayoutParams.WRAP_CONTENT;
 		//使得窗口支持透明度
 		layoutParams.format = PixelFormat.TRANSLUCENT;
+		
+		layoutParams.gravity = Gravity.LEFT|Gravity.TOP;
+		layoutParams.x = 200;
+		layoutParams.y = 300;
+		
 		
 		layoutParams.type = WindowManager.LayoutParams.TYPE_TOAST;
 		layoutParams.flags = WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON|WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE|WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE;

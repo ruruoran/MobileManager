@@ -29,6 +29,13 @@
         settingitem:sp_keyname="showloaction"
         />
     
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="自定义归属地显示框位置"
+        android:onClick="settoastlocation"
+        />
+    
    <!--  <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
