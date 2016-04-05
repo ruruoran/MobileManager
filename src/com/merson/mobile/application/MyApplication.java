@@ -37,6 +37,12 @@ public class MyApplication extends Application {
 		editor.commit();
 	}
 	
+	public static void setConfigValue(String key , int value){
+		editor.putInt(key, value);
+		editor.commit();
+	}
+	
+	
 	@Override
 	public void onTerminate() {
 		// TODO Auto-generated method stub

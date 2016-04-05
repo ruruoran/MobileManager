@@ -1,5 +1,6 @@
 package com.merson.mobile.receiver;
 
+import com.merson.mobile.application.MyApplication;
 import com.merson.mobile.dao.NumberLocationDao;
 import com.merson.mobilemanager.R;
 
@@ -105,9 +106,12 @@ public class MyNumberLocationService extends Service {
 		layoutParams.format = PixelFormat.TRANSLUCENT;
 		
 		layoutParams.gravity = Gravity.LEFT|Gravity.TOP;
-		layoutParams.x = 200;
+		/*layoutParams.x = 200;
 		layoutParams.y = 300;
+		*/
 		
+		layoutParams.x = MyApplication.configsp.getInt("toastx", 200);
+		layoutParams.y = MyApplication.configsp.getInt("toasty", 300)+50;
 		
 		layoutParams.type = WindowManager.LayoutParams.TYPE_TOAST;
 		layoutParams.flags = WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON|WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE|WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE;
