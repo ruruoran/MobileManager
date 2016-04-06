@@ -51,7 +51,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+        </activity>
         -->
 
         <activity
@@ -137,6 +137,10 @@
         <activity
             android:name=".SetToastLocationActivity"
             android:label="@string/title_activity_set_toast_location" >
+        </activity>
+        <activity
+            android:name=".PackageManagerActivity"
+            android:label="@string/title_activity_package_manager" >
         </activity>
     </application>
 

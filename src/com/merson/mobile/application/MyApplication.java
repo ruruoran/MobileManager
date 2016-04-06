@@ -28,8 +28,11 @@ public class MyApplication extends Application {
 		 
 		 editor = configsp.edit();
 		 
-		 startService(new Intent(this, MyNumberLocationService.class));
-		 
+		 if (configsp.getBoolean("showloaction", false)) {
+			 startService(new Intent(this, MyNumberLocationService.class));
+
+		}
+		 		 
 	}
 	
 	public static void setConfigValue(String key , String value){
@@ -47,7 +50,7 @@ public class MyApplication extends Application {
 	public void onTerminate() {
 		// TODO Auto-generated method stub
 		super.onTerminate();
-		stopService(new Intent(this, MyNumberLocationService.class));
+//		stopService(new Intent(this, MyNumberLocationService.class));
 	}
 
 }

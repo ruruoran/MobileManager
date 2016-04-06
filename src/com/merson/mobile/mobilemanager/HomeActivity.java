@@ -3,6 +3,7 @@ package com.merson.mobile.mobilemanager;
 import com.merson.mobile.application.MyApplication; 
 import com.merson.mobile.utils.Md5Utils;
 import com.merson.mobilemanager.AdvanceToolActivity;
+import com.merson.mobilemanager.PackageManagerActivity;
 import com.merson.mobilemanager.R; 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -92,7 +93,8 @@ public class HomeActivity extends ActionBarActivity {
 				break;
 				
 			case 2:
-				Toast.makeText(HomeActivity.this,titles[position],Toast.LENGTH_LONG).show();
+				startActivity(new Intent(HomeActivity.this,PackageManagerActivity.class));
+//				Toast.makeText(HomeActivity.this,titles[position],Toast.LENGTH_LONG).show();
 				break;
 				
 			case 3:

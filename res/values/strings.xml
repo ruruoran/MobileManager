@@ -18,5 +18,6 @@
     <string name="title_activity_advance_tool">AdvanceToolActivity</string>
     <string name="title_activity_query_location">QueryLocationActivity</string>
     <string name="title_activity_set_toast_location">SetToastLocationActivity</string>
+    <string name="title_activity_package_manager">PackageManagerActivity</string>
 
 </resources>
